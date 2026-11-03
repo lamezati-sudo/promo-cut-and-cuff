@@ -1,0 +1,14 @@
+{
+  "name": "cut-and-cuff",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Cut & Cuff promotional website, built for GitHub Pages.",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test scripts/site.test.mjs",
+    "preview": "node scripts/serve.mjs dist"
+  },
+  "engines": { "node": ">=22" }
+}
