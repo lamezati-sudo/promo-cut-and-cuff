@@ -21,6 +21,7 @@ test('all internal section links resolve to unique IDs', () => {
 });
 test('scripts parse and all style preview assets exist', async () => {
   new Script(await readFile(resolve(root, 'app.js'), 'utf8'));
+  for (const [, inlineScript] of html.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)) new Script(inlineScript);
   for (const key of ['everyday', 'tailored', 'off-duty', 'after-hours']) await access(resolve(root, `assets/look-${key}.jpg`));
 });
 test('social preview is local, present, and published at the expected URL', async () => {
